@@ -17,7 +17,7 @@ st.set_page_config(
 def get_definition(user_input):
     response = openai.Completion.create(
     model="text-davinci-003",
-    prompt=f"Explain {user_input} in simple terms, in one sentence. After the explanation, be like 'It's basically [explanation] 💡.' Keep it short.",
+    prompt = f"Can you explain {user_input} in simple terms, in one sentence? After the explanation, say something like '[It's/They're] essentially [explanation] 💡.' Please keep your response brief."
     temperature=0.5,
     max_tokens=112,
     )
