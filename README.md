@@ -1,5 +1,7 @@
 # Simple Dictionary 💡
 
+_**[Live Project Deployment](https://simpledict.onrender.com/)**_
+
 **Simple Dictionary** is a Streamlit web application that allows you to get quick and straightforward definitions for words or phrases. It utilizes the OpenAI API to provide concise explanations in one sentence.
 
 ![App Screenshot](static/img/sc.png)
