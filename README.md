@@ -2,6 +2,8 @@
 
 **Simple Dictionary** is a Streamlit web application that allows you to get quick and straightforward definitions for words or phrases. It utilizes the OpenAI API to provide concise explanations in one sentence.
 
+![App Screenshot](static/img/sc.png)
+
 Simple Dictionary was born out of frustration with learning concepts as a beginner. Often times, when first learning something, online definitions can be overcomplicated and cumbersome. Simple Dictionary provides a solution to this, by providing simple, concise definitions for any word or phrase.
 
 ## Getting Started
