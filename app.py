@@ -13,6 +13,13 @@ st.set_page_config(
     layout="centered",
     initial_sidebar_state="auto",
 )
+st.markdown("""
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """, unsafe_allow_html=True)
 
 def get_definition(user_input):
     try:
@@ -28,21 +35,14 @@ def get_definition(user_input):
 
 st.markdown("<h1><center>💡Simple Dictionary</center></h1>", unsafe_allow_html=True)
 st.markdown("<h6><center>Enter a word or phrase below to get a simple definition in seconds... 📖</center></h6>", unsafe_allow_html=True)
-
-user_input = st.text_input(" ", placeholder="[word or phrase]", label_visibility="hidden")
-chat_button = st.columns((5, 3, 5))[1].button("Get Definition ✨")
 st.write("")
-if chat_button and user_input.strip() != "":
-    with st.spinner("Loading... 🤓"):
-        definition, err = get_definition(user_input)
-        if definition: st.info(definition)
-        else: st.error(f"🚨 Error: {err}")
+with st.form("input"):
+    user_input = st.text_input(" ", placeholder="[word or phrase]", label_visibility="hidden")
+    chat_button = st.columns((5, 3, 5))[1].form_submit_button("Get Definition ✨")
+    if chat_button and user_input.strip() != "":
+        with st.spinner("Loading... 🤓"):
+            definition, err = get_definition(user_input)
+            if definition: st.info(definition)
+            else: st.error(f"🚨 Error: {err}")
 
 st.markdown("<hr><center>© Omar Anwar 2023</center><hr>", unsafe_allow_html=True)
-st.markdown("""
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            </style>
-            """, unsafe_allow_html=True)
