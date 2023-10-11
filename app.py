@@ -19,7 +19,7 @@ def get_definition(user_input):
     model="text-davinci-003",
     prompt=f"Explain {user_input} in simple terms, in one sentence. After the explanation, be like 'It's basically [explanation] 💡.' Keep it short.",
     temperature=0.5,
-    max_tokens=84,
+    max_tokens=112,
     )
 
     return response.choices[0].text
