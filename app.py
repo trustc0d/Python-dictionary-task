@@ -18,11 +18,12 @@ def get_definition(user_input):
     try:
         response = openai.Completion.create(
             model="text-davinci-003",
-            prompt = f"Can you explain {user_input} in simple terms, in one sentence? After the explanation, say something like '[It's/They're] essentially [explanation] 💡.' Please keep your response brief.",
+            prompt = f"Explain {user_input} in simple terms, in one sentence. After the explanation, say something like '[It's/They're] essentially [explanation] 💡.' Please keep your response brief, and straight to the point.",
             temperature=0.5,
             max_tokens=112,
         )
-        return response.choices[0].text
+        res_text = response.choices[0].text;
+        return '\n\n'.join(res_text.split('\n\n')[:3]), None
     except Exception as err: return None, err
 
 st.markdown("<h1><center>💡Simple Dictionary</center></h1>", unsafe_allow_html=True)
